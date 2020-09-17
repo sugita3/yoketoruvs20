@@ -128,6 +128,7 @@
             this.titleButton.TabIndex = 7;
             this.titleButton.Text = "タイトルへ";
             this.titleButton.UseVisualStyleBackColor = false;
+            this.titleButton.Click += new System.EventHandler(this.titleButton_Click);
             // 
             // clearLabel
             // 
