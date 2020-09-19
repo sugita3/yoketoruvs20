@@ -44,8 +44,9 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.titleLabel.ForeColor = System.Drawing.Color.Chartreuse;
             this.titleLabel.Location = new System.Drawing.Point(200, 84);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(365, 73);
@@ -62,7 +63,7 @@
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(216, 84);
             this.startButton.TabIndex = 1;
-            this.startButton.Text = "スタート!!";
+            this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
@@ -72,9 +73,9 @@
             this.copyrightLabel.Font = new System.Drawing.Font("MS UI Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.copyrightLabel.Location = new System.Drawing.Point(270, 410);
             this.copyrightLabel.Name = "copyrightLabel";
-            this.copyrightLabel.Size = new System.Drawing.Size(260, 22);
+            this.copyrightLabel.Size = new System.Drawing.Size(282, 22);
             this.copyrightLabel.TabIndex = 2;
-            this.copyrightLabel.Text = "Copyright © 2020 田中　雄";
+            this.copyrightLabel.Text = "Copyright © 2020 杉田　雅直";
             // 
             // timeLabel
             // 
@@ -109,10 +110,10 @@
             // gameOverLabel
             // 
             this.gameOverLabel.AutoSize = true;
-            this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.gameOverLabel.BackColor = System.Drawing.SystemColors.MenuText;
             this.gameOverLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.gameOverLabel.ForeColor = System.Drawing.Color.Blue;
-            this.gameOverLabel.Location = new System.Drawing.Point(219, 167);
+            this.gameOverLabel.ForeColor = System.Drawing.Color.Red;
+            this.gameOverLabel.Location = new System.Drawing.Point(184, 175);
             this.gameOverLabel.Name = "gameOverLabel";
             this.gameOverLabel.Size = new System.Drawing.Size(346, 73);
             this.gameOverLabel.TabIndex = 6;
@@ -123,20 +124,20 @@
             this.titleButton.BackColor = System.Drawing.SystemColors.Control;
             this.titleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.titleButton.ForeColor = System.Drawing.Color.Black;
-            this.titleButton.Location = new System.Drawing.Point(292, 303);
+            this.titleButton.Location = new System.Drawing.Point(293, 286);
             this.titleButton.Name = "titleButton";
             this.titleButton.Size = new System.Drawing.Size(216, 84);
             this.titleButton.TabIndex = 7;
-            this.titleButton.Text = "タイトルへ";
+            this.titleButton.Text = "ホームボタン";
             this.titleButton.UseVisualStyleBackColor = false;
             this.titleButton.Click += new System.EventHandler(this.titleButton_Click);
             // 
             // clearLabel
             // 
             this.clearLabel.AutoSize = true;
-            this.clearLabel.BackColor = System.Drawing.Color.Transparent;
+            this.clearLabel.BackColor = System.Drawing.Color.Cyan;
             this.clearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.clearLabel.ForeColor = System.Drawing.Color.Red;
+            this.clearLabel.ForeColor = System.Drawing.Color.Blue;
             this.clearLabel.Location = new System.Drawing.Point(264, 167);
             this.clearLabel.Name = "clearLabel";
             this.clearLabel.Size = new System.Drawing.Size(282, 73);
