@@ -20,11 +20,12 @@ namespace yoketoruvs20
         const int ItemMax = 10;
         const int ChrMax = PlayerMax + EnemyMax + ItemMax;
         Label[] chrs = new Label[ChrMax];
+        
         const int PlayerIndex = 0;
         const int EnemyIndex = PlayerIndex + PlayerMax;
         const int ItemIndex = EnemyIndex + EnemyMax;
 
-        const string PlayerText = "(・ω・)";
+        const string PlayerText = "(o^―^o)";
         const string EnemyText = "◆";
         const string ItemText = "★";
 
@@ -45,6 +46,8 @@ namespace yoketoruvs20
         int[] vx = new int[ChrMax];
         int[] vy = new int[ChrMax];
 
+        
+
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int vKey);
 
@@ -56,6 +59,11 @@ namespace yoketoruvs20
             {
                 chrs[i] = new Label();
                 chrs[i].AutoSize = true;
+
+                vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+                vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+
+
                 if (i == PlayerIndex)
                 {
                     chrs[i].Text = PlayerText;
@@ -101,6 +109,33 @@ namespace yoketoruvs20
         {
             Point mp = PointToClient(MousePosition);
 
+            chrs[0].Left = mp.X-chrs[0].Width/2;
+            chrs[0].Top = mp.Y - chrs[0].Height / 2;
+
+            for (int i = 1; i < ChrMax; i++)
+            {
+                chrs[i].Left += vx[i];
+                chrs[i].Top += vy[i];
+
+                if (chrs[i].Left < 0)
+                {
+                    vx[i] = Math.Abs(vx[i]);
+                }
+                if(chrs[i].Top<0)
+                {
+                    vy[i] = Math.Abs(vx[i]);
+                }
+                if(chrs[i].Right>ClientSize.Width)
+                {
+                    vx[i] = -Math.Abs(vx[i]);
+                }
+                if(chrs[i].Bottom>ClientSize.Height)
+                {
+                    vy[i] = -Math.Abs(vy[i]);
+                }
+            }
+            
+            
             // TODO: mpがプレイヤーの中心になるように設定
 
 
@@ -158,6 +193,11 @@ namespace yoketoruvs20
         private void titleButton_Click(object sender, EventArgs e)
         {
             nextState = State.Title;
+        }
+
+        private void titleLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

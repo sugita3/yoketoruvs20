@@ -44,18 +44,19 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("小塚ゴシック Pr6N B", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.titleLabel.Location = new System.Drawing.Point(173, 87);
+            this.titleLabel.Location = new System.Drawing.Point(200, 84);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(454, 117);
+            this.titleLabel.Size = new System.Drawing.Size(365, 73);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "よけとる2020";
+            this.titleLabel.Click += new System.EventHandler(this.titleLabel_Click);
             // 
             // startButton
             // 
             this.startButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.startButton.Font = new System.Drawing.Font("小塚ゴシック Pr6N B", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.startButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.startButton.Location = new System.Drawing.Point(292, 303);
             this.startButton.Name = "startButton";
@@ -78,30 +79,30 @@
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Font = new System.Drawing.Font("小塚ゴシック Pr6N B", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.timeLabel.Location = new System.Drawing.Point(12, 9);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(160, 59);
+            this.timeLabel.Size = new System.Drawing.Size(149, 37);
             this.timeLabel.TabIndex = 3;
             this.timeLabel.Text = "Time 100";
             // 
             // leftLabel
             // 
             this.leftLabel.AutoSize = true;
-            this.leftLabel.Font = new System.Drawing.Font("小塚ゴシック Pr6N B", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.leftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.leftLabel.Location = new System.Drawing.Point(679, 9);
             this.leftLabel.Name = "leftLabel";
-            this.leftLabel.Size = new System.Drawing.Size(109, 59);
+            this.leftLabel.Size = new System.Drawing.Size(89, 37);
             this.leftLabel.TabIndex = 4;
             this.leftLabel.Text = "★: 10";
             // 
             // hiLabel
             // 
             this.hiLabel.AutoSize = true;
-            this.hiLabel.Font = new System.Drawing.Font("小塚ゴシック Pr6N B", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.hiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.hiLabel.Location = new System.Drawing.Point(282, 205);
             this.hiLabel.Name = "hiLabel";
-            this.hiLabel.Size = new System.Drawing.Size(238, 59);
+            this.hiLabel.Size = new System.Drawing.Size(227, 37);
             this.hiLabel.TabIndex = 5;
             this.hiLabel.Text = "HighScore 100";
             // 
@@ -109,18 +110,18 @@
             // 
             this.gameOverLabel.AutoSize = true;
             this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.gameOverLabel.Font = new System.Drawing.Font("小塚ゴシック Pr6N B", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.gameOverLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.gameOverLabel.ForeColor = System.Drawing.Color.Blue;
             this.gameOverLabel.Location = new System.Drawing.Point(219, 167);
             this.gameOverLabel.Name = "gameOverLabel";
-            this.gameOverLabel.Size = new System.Drawing.Size(363, 117);
+            this.gameOverLabel.Size = new System.Drawing.Size(346, 73);
             this.gameOverLabel.TabIndex = 6;
             this.gameOverLabel.Text = "GameOver";
             // 
             // titleButton
             // 
             this.titleButton.BackColor = System.Drawing.SystemColors.Control;
-            this.titleButton.Font = new System.Drawing.Font("小塚ゴシック Pr6N B", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.titleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.titleButton.ForeColor = System.Drawing.Color.Black;
             this.titleButton.Location = new System.Drawing.Point(292, 303);
             this.titleButton.Name = "titleButton";
@@ -134,11 +135,11 @@
             // 
             this.clearLabel.AutoSize = true;
             this.clearLabel.BackColor = System.Drawing.Color.Transparent;
-            this.clearLabel.Font = new System.Drawing.Font("小塚ゴシック Pr6N B", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.clearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.clearLabel.ForeColor = System.Drawing.Color.Red;
             this.clearLabel.Location = new System.Drawing.Point(264, 167);
             this.clearLabel.Name = "clearLabel";
-            this.clearLabel.Size = new System.Drawing.Size(273, 117);
+            this.clearLabel.Size = new System.Drawing.Size(282, 73);
             this.clearLabel.TabIndex = 8;
             this.clearLabel.Text = "CLEAR!!";
             // 
