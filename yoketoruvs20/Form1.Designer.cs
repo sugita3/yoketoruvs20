@@ -39,6 +39,7 @@
             this.titleButton = new System.Windows.Forms.Button();
             this.clearLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tempLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -86,6 +87,7 @@
             this.timeLabel.Size = new System.Drawing.Size(149, 37);
             this.timeLabel.TabIndex = 3;
             this.timeLabel.Text = "Time 100";
+            this.timeLabel.Click += new System.EventHandler(this.timeLabel_Click);
             // 
             // leftLabel
             // 
@@ -96,6 +98,7 @@
             this.leftLabel.Size = new System.Drawing.Size(89, 37);
             this.leftLabel.TabIndex = 4;
             this.leftLabel.Text = "★: 10";
+            this.leftLabel.Click += new System.EventHandler(this.leftLabel_Click);
             // 
             // hiLabel
             // 
@@ -103,9 +106,10 @@
             this.hiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.hiLabel.Location = new System.Drawing.Point(282, 205);
             this.hiLabel.Name = "hiLabel";
-            this.hiLabel.Size = new System.Drawing.Size(227, 37);
+            this.hiLabel.Size = new System.Drawing.Size(193, 37);
             this.hiLabel.TabIndex = 5;
-            this.hiLabel.Text = "HighScore 100";
+            this.hiLabel.Text = "HighScore 0";
+            this.hiLabel.Click += new System.EventHandler(this.hiLabel_Click);
             // 
             // gameOverLabel
             // 
@@ -113,7 +117,7 @@
             this.gameOverLabel.BackColor = System.Drawing.SystemColors.MenuText;
             this.gameOverLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.gameOverLabel.ForeColor = System.Drawing.Color.Red;
-            this.gameOverLabel.Location = new System.Drawing.Point(184, 175);
+            this.gameOverLabel.Location = new System.Drawing.Point(50, 132);
             this.gameOverLabel.Name = "gameOverLabel";
             this.gameOverLabel.Size = new System.Drawing.Size(346, 73);
             this.gameOverLabel.TabIndex = 6;
@@ -138,7 +142,7 @@
             this.clearLabel.BackColor = System.Drawing.Color.Cyan;
             this.clearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.clearLabel.ForeColor = System.Drawing.Color.Blue;
-            this.clearLabel.Location = new System.Drawing.Point(264, 167);
+            this.clearLabel.Location = new System.Drawing.Point(420, 132);
             this.clearLabel.Name = "clearLabel";
             this.clearLabel.Size = new System.Drawing.Size(282, 73);
             this.clearLabel.TabIndex = 8;
@@ -149,11 +153,23 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tempLabel
+            // 
+            this.tempLabel.AutoSize = true;
+            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tempLabel.Location = new System.Drawing.Point(209, 410);
+            this.tempLabel.Name = "tempLabel";
+            this.tempLabel.Size = new System.Drawing.Size(31, 21);
+            this.tempLabel.TabIndex = 9;
+            this.tempLabel.Text = "★";
+            this.tempLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.clearLabel);
             this.Controls.Add(this.titleButton);
             this.Controls.Add(this.gameOverLabel);
@@ -182,6 +198,7 @@
         private System.Windows.Forms.Button titleButton;
         private System.Windows.Forms.Label clearLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label tempLabel;
     }
 }
 
