@@ -154,10 +154,10 @@
             // tempLabel
             // 
             this.tempLabel.AutoSize = true;
-            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tempLabel.Location = new System.Drawing.Point(611, 286);
             this.tempLabel.Name = "tempLabel";
-            this.tempLabel.Size = new System.Drawing.Size(39, 27);
+            this.tempLabel.Size = new System.Drawing.Size(16, 11);
             this.tempLabel.TabIndex = 9;
             this.tempLabel.Text = "●";
             this.tempLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
