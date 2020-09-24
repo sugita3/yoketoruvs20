@@ -89,6 +89,8 @@ namespace yoketoruvs20
         private void timer1_Tick(object sender, EventArgs e)
         {
             timeCount--;
+            
+            
 
             if (nextState != State.None)
             {
@@ -161,7 +163,7 @@ namespace yoketoruvs20
                             nextState = State.Gameover;
                         else
                         {
-                            itemCount--;
+                            itemCount=itemCount-1;
                             chrs[i].Visible = false;
                            
                             if (itemCount <=0)
