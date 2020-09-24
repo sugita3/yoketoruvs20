@@ -39,6 +39,7 @@
             this.titleButton = new System.Windows.Forms.Button();
             this.clearLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tempLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -150,11 +151,24 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tempLabel
+            // 
+            this.tempLabel.AutoSize = true;
+            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tempLabel.Location = new System.Drawing.Point(611, 286);
+            this.tempLabel.Name = "tempLabel";
+            this.tempLabel.Size = new System.Drawing.Size(39, 27);
+            this.tempLabel.TabIndex = 9;
+            this.tempLabel.Text = "●";
+            this.tempLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tempLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.clearLabel);
             this.Controls.Add(this.titleButton);
             this.Controls.Add(this.gameOverLabel);
@@ -183,6 +197,7 @@
         private System.Windows.Forms.Button titleButton;
         private System.Windows.Forms.Label clearLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label tempLabel;
     }
 }
 
