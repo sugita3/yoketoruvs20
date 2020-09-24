@@ -91,8 +91,6 @@ namespace yoketoruvs20
         {
             timeCount--;
             
-            
-
             if (nextState != State.None)
             {
                 initProc();
@@ -170,13 +168,15 @@ namespace yoketoruvs20
                             else
                             {
                                 chrs[i].Visible = false;
-                                
-                                    itemCount--;//これがキーポイント
+                               
+                                //これがキーポイント
                                     /*やってみたこと
                                      * やり方１、別の数値と比較して、調整を図る
 やり方２、ループ文を利用して、正確にitemCountを図る（c言語のwhile文のような感じ）
-やり方３、itemtextを点にする*/
-
+やり方３、itemtextを点にする
+やり方４、小さなタイムラグを入れる*/
+                                
+                               
                                     if (itemCount <= 0)
                                     {
                                         leftLabel.Text = "" + itemCount;
