@@ -16,6 +16,7 @@ namespace yoketoruvs20
         int timeCount;
         int itemCount;
         int hiCount;
+        int checker;
 
         const bool isDebug = true;
 
@@ -153,29 +154,40 @@ namespace yoketoruvs20
                     vy[i] = -Math.Abs(vy[i]);
                 }
 
-                if(mp.X>chrs[i].Left
-                    &&mp.X<=chrs[i].Right
-                    &&mp.Y > chrs[i].Top
-                    &&mp.Y <= chrs[i].Bottom)
-                {
-                    
-                        if (i < ItemIndex)
-                            nextState = State.Gameover;
-                        else
-                        {
-                            itemCount=itemCount-1;
-                            chrs[i].Visible = false;
-                           
-                            if (itemCount <=0)
+                
+                
+                    if (mp.X > chrs[i].Left
+                        && mp.X <= chrs[i].Right
+                        && mp.Y > chrs[i].Top
+                        && mp.Y <= chrs[i].Bottom)
+                    {
+                       
+                            if (i < ItemIndex)
                             {
-                                leftLabel.Text = "" + itemCount;
-                                nextState = State.Clear;
-                                
+                                nextState = State.Gameover;
+
                             }
-                        }
-                                         
-                    
-                }
+                            else
+                            {
+                                chrs[i].Visible = false;
+                                
+                                    itemCount--;//これがキーポイント
+                                    /*やってみたこと
+                                     * やり方１、別の数値と比較して、調整を図る
+やり方２、ループ文を利用して、正確にitemCountを図る（c言語のwhile文のような感じ）
+やり方３、itemtextを点にする*/
+
+                                    if (itemCount <= 0)
+                                    {
+                                        leftLabel.Text = "" + itemCount;
+                                        nextState = State.Clear;
+
+                                    }
+
+                            }
+
+                     }
+                
             }
             
             
