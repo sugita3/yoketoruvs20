@@ -97,7 +97,6 @@
             this.leftLabel.Size = new System.Drawing.Size(89, 37);
             this.leftLabel.TabIndex = 4;
             this.leftLabel.Text = "★: 10";
-            this.leftLabel.Click += new System.EventHandler(this.leftLabel_Click);
             // 
             // hiLabel
             // 
@@ -155,10 +154,10 @@
             // tempLabel
             // 
             this.tempLabel.AutoSize = true;
-            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tempLabel.Location = new System.Drawing.Point(611, 286);
             this.tempLabel.Name = "tempLabel";
-            this.tempLabel.Size = new System.Drawing.Size(31, 21);
+            this.tempLabel.Size = new System.Drawing.Size(16, 11);
             this.tempLabel.TabIndex = 9;
             this.tempLabel.Text = "●";
             this.tempLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

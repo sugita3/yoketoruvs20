@@ -8,15 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using System.Threading;
 
 namespace yoketoruvs20
 {
     public partial class Form1 : Form
     {
-
-        int itemCount;//途中
-
         const bool isDebug = true;
 
         const int PlayerMax = 1;
@@ -32,8 +28,6 @@ namespace yoketoruvs20
         const string PlayerText = "(o^―^o)";
         const string EnemyText = "◆";
         const string ItemText = "★";
-
-        
 
         static Random rand = new Random();
 
@@ -54,7 +48,6 @@ namespace yoketoruvs20
 
         
 
-
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int vKey);
 
@@ -62,9 +55,7 @@ namespace yoketoruvs20
         {
             InitializeComponent();
 
-            
-
-            for (int i = 0; i < ChrMax; i++)
+            for(int i = 0; i < ChrMax; i++)
             {
                 chrs[i] = new Label();
                 chrs[i].AutoSize = true;
@@ -115,8 +106,6 @@ namespace yoketoruvs20
 
         void UpdateGame()
         {
-            
-
             Point mp = PointToClient(MousePosition);
 
             chrs[PlayerIndex].Left = mp.X-chrs[PlayerIndex].Width/2;
@@ -124,40 +113,19 @@ namespace yoketoruvs20
 
             for (int i = EnemyIndex; i < ChrMax; i++)
             {
-                itemCount = 10;
-                leftLabel.Text = "★" + itemCount;
-
                 chrs[i].Left += vx[i];
                 chrs[i].Top += vy[i];
-                                
-                    if (mp.X >= chrs[i].Left
-                        && mp.Y >= chrs[i].Top
-                        && mp.X < chrs[i].Right
-                        && mp.Y < chrs[i].Bottom)
-                    {
-                        if (i < ItemIndex)
-                         {
-                            MessageBox.Show("重なった！");
-                            nextState = State.Gameover;
-                         }
-                        if (i>=ItemIndex)
+
+                
+                        if (mp.X >= chrs[i].Left
+                            && mp.Y >= chrs[i].Top
+                            && mp.X < chrs[i].Right
+                            && mp.Y < chrs[i].Bottom)
                         {
-                        
-                            chrs[i].Visible = false;
-                             itemCount--;
-                            leftLabel.Text = "★" + itemCount--;
-
-
-                        if (itemCount <= 0)
-                                {
-                                    nextState = State.Clear;
-                                }
-
-                        }
-                       
+                            
+                            MessageBox.Show("重なった！");
                     
-                        
-                    }
+                        }
                    
                 if (chrs[i].Left < 0)
                 {
@@ -175,8 +143,6 @@ namespace yoketoruvs20
                 {
                     vy[i] = -Math.Abs(vy[i]);
                 }
-                
-
             }
             
            
@@ -209,8 +175,6 @@ namespace yoketoruvs20
                     copyrightLabel.Visible = false;
                     hiLabel.Visible = false;
 
-                    
-
                     for(int i = EnemyIndex; i < ChrMax; i++)
                     {
                         chrs[i].Left = rand.Next(ClientSize.Width - chrs[i].Width);
@@ -219,11 +183,7 @@ namespace yoketoruvs20
                         vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
                         vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
 
-                        
-
-
                     }
-                    
 
                     break;
 
@@ -256,11 +216,6 @@ namespace yoketoruvs20
         }
 
         private void clearLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void leftLabel_Click(object sender, EventArgs e)
         {
 
         }
