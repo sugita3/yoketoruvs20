@@ -157,7 +157,11 @@ namespace yoketoruvs20
                     if (mp.X > chrs[i].Left
                         && mp.X <= chrs[i].Right
                         && mp.Y > chrs[i].Top
-                        && mp.Y <= chrs[i].Bottom)
+                        && mp.Y <= chrs[i].Bottom
+                        &&chrs[i].Visible == true)
+
+ //c#は、ループ文があまり得意ではないようなので、気を付ける
+                        
                     {
                        
                             if (i < ItemIndex)
@@ -168,22 +172,19 @@ namespace yoketoruvs20
                             else
                             {
                                 chrs[i].Visible = false;
-                               
-                                //これがキーポイント
+                                itemCount--;
+                                    //これがキーポイント
                                     /*やってみたこと
                                      * やり方１、別の数値と比較して、調整を図る
-やり方２、ループ文を利用して、正確にitemCountを図る（c言語のwhile文のような感じ）
+やり方２、ループ文を利用して、正確にitemCountを図る
 やり方３、itemtextを点にする
-やり方４、小さなタイムラグを入れる*/
-                                
-                               
+*/
                                     if (itemCount <= 0)
                                     {
-                                        leftLabel.Text = "" + itemCount;
+                                        leftLabel.Text = "★：" + itemCount;
                                         nextState = State.Clear;
 
                                     }
-
                             }
 
                      }
@@ -191,7 +192,7 @@ namespace yoketoruvs20
             }
             
             
-            // TODO: mpがプレイヤーの中心になるように設定
+            
 
 
         }
@@ -249,7 +250,7 @@ namespace yoketoruvs20
                     hiLabel.Visible = true;
 
                     if (hiCount < timeCount)
-                        hiCount = timeCount;
+                        hiCount = timeCount+1;
 
                     break;
             }
