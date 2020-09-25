@@ -60,6 +60,9 @@ namespace yoketoruvs20
                 chrs[i] = new Label();
                 chrs[i].AutoSize = true;
 
+                vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+                vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+
 
                 if (i == PlayerIndex)
                 {
@@ -106,10 +109,10 @@ namespace yoketoruvs20
         {
             Point mp = PointToClient(MousePosition);
 
-            chrs[PlayerIndex].Left = mp.X-chrs[PlayerIndex].Width/2;
-            chrs[PlayerIndex].Top = mp.Y-chrs[PlayerIndex].Height/2;
+            chrs[0].Left = mp.X-chrs[0].Width/2;
+            chrs[0].Top = mp.Y - chrs[0].Height / 2;
 
-            for (int i = EnemyIndex; i < ChrMax; i++)
+            for (int i = 1; i < ChrMax; i++)
             {
                 chrs[i].Left += vx[i];
                 chrs[i].Top += vy[i];
@@ -120,7 +123,7 @@ namespace yoketoruvs20
                 }
                 if(chrs[i].Top<0)
                 {
-                    vy[i] = Math.Abs(vy[i]);
+                    vy[i] = Math.Abs(vx[i]);
                 }
                 if(chrs[i].Right>ClientSize.Width)
                 {
@@ -165,10 +168,6 @@ namespace yoketoruvs20
                     {
                         chrs[i].Left = rand.Next(ClientSize.Width - chrs[i].Width);
                         chrs[i].Top = rand.Next(ClientSize.Height - chrs[i].Height);
-
-                        vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
-                        vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
-
                     }
 
                     break;
@@ -197,11 +196,6 @@ namespace yoketoruvs20
         }
 
         private void titleLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clearLabel_Click(object sender, EventArgs e)
         {
 
         }

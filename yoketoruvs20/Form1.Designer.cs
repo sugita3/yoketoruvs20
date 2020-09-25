@@ -143,7 +143,6 @@
             this.clearLabel.Size = new System.Drawing.Size(282, 73);
             this.clearLabel.TabIndex = 8;
             this.clearLabel.Text = "CLEAR!!";
-            this.clearLabel.Click += new System.EventHandler(this.clearLabel_Click);
             // 
             // timer1
             // 
