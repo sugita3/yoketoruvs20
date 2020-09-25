@@ -13,6 +13,11 @@ namespace yoketoruvs20
 {
     public partial class Form1 : Form
     {
+        int timeCount;
+        int itemCount;
+        int hiCount;
+        int checker;
+
         const bool isDebug = true;
 
         const int PlayerMax = 1;
@@ -55,13 +60,12 @@ namespace yoketoruvs20
         {
             InitializeComponent();
 
-            for(int i = 0; i < ChrMax; i++)
+            for (int i = 0; i < ChrMax; i++)
             {
                 chrs[i] = new Label();
                 chrs[i].AutoSize = true;
 
-                vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
-                vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+
 
 
                 if (i == PlayerIndex)
@@ -76,12 +80,17 @@ namespace yoketoruvs20
                 {
                     chrs[i].Text = ItemText;
                 }
+                chrs[i].Font = tempLabel.Font;
+
                 Controls.Add(chrs[i]);
             }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            timeCount--;
+            
             if (nextState != State.None)
             {
                 initProc();
@@ -109,14 +118,23 @@ namespace yoketoruvs20
         {
             Point mp = PointToClient(MousePosition);
 
-            chrs[0].Left = mp.X-chrs[0].Width/2;
-            chrs[0].Top = mp.Y - chrs[0].Height / 2;
+            chrs[PlayerIndex].Left = mp.X - chrs[PlayerIndex].Width / 2;
+            chrs[PlayerIndex].Top = mp.Y - chrs[PlayerIndex].Height / 2;
+
+            timeLabel.Text = "" + timeCount;
+            leftLabel.Text = "" + itemCount;
+            
+                        
+            if(timeCount<=0)
+            {
+                nextState = State.Gameover;
+            }
 
             for (int i = 1; i < ChrMax; i++)
             {
                 chrs[i].Left += vx[i];
                 chrs[i].Top += vy[i];
-
+                                
                 if (chrs[i].Left < 0)
                 {
                     vx[i] = Math.Abs(vx[i]);
@@ -133,6 +151,43 @@ namespace yoketoruvs20
                 {
                     vy[i] = -Math.Abs(vy[i]);
                 }
+
+                
+                
+                    if (mp.X > chrs[i].Left
+                        && mp.X <= chrs[i].Right
+                        && mp.Y > chrs[i].Top
+                        && mp.Y <= chrs[i].Bottom)
+                    {
+                       
+                            if (i < ItemIndex)
+                            {
+                                nextState = State.Gameover;
+
+                            }
+                            else
+                            {
+                                chrs[i].Visible = false;
+                               
+                                //これがキーポイント
+                                    /*やってみたこと
+                                     * やり方１、別の数値と比較して、調整を図る
+やり方２、ループ文を利用して、正確にitemCountを図る（c言語のwhile文のような感じ）
+やり方３、itemtextを点にする
+やり方４、小さなタイムラグを入れる*/
+                                
+                               
+                                    if (itemCount <= 0)
+                                    {
+                                        leftLabel.Text = "" + itemCount;
+                                        nextState = State.Clear;
+
+                                    }
+
+                            }
+
+                     }
+                
             }
             
             
@@ -156,6 +211,9 @@ namespace yoketoruvs20
                     gameOverLabel.Visible = false;
                     titleButton.Visible = false;
                     clearLabel.Visible = false;
+
+                    hiLabel.Text = "HighScore_" + hiCount;
+
                     break;
 
                 case State.Game:
@@ -164,10 +222,18 @@ namespace yoketoruvs20
                     copyrightLabel.Visible = false;
                     hiLabel.Visible = false;
 
-                    for(int i = EnemyIndex; i < ChrMax; i++)
+                    itemCount = ItemMax;
+                    timeCount = 100;
+
+                    for(int i = EnemyIndex; i < ChrMax;i++)
                     {
                         chrs[i].Left = rand.Next(ClientSize.Width - chrs[i].Width);
                         chrs[i].Top = rand.Next(ClientSize.Height - chrs[i].Height);
+
+                        vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+                        vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+
+                        chrs[i].Visible = true;
                     }
 
                     break;
@@ -181,6 +247,10 @@ namespace yoketoruvs20
                     clearLabel.Visible = true;
                     titleButton.Visible = true;
                     hiLabel.Visible = true;
+
+                    if (hiCount < timeCount)
+                        hiCount = timeCount;
+
                     break;
             }
         }
@@ -196,6 +266,21 @@ namespace yoketoruvs20
         }
 
         private void titleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void leftLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timeLabel_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void hiLabel_Click(object sender, EventArgs e)
         {
 
         }
