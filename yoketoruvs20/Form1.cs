@@ -116,17 +116,6 @@ namespace yoketoruvs20
                 chrs[i].Left += vx[i];
                 chrs[i].Top += vy[i];
 
-                
-                        if (mp.X >= chrs[i].Left
-                            && mp.Y >= chrs[i].Top
-                            && mp.X < chrs[i].Right
-                            && mp.Y < chrs[i].Bottom)
-                        {
-                            
-                            MessageBox.Show("重なった！");
-                    
-                        }
-                   
                 if (chrs[i].Left < 0)
                 {
                     vx[i] = Math.Abs(vx[i]);
@@ -145,7 +134,6 @@ namespace yoketoruvs20
                 }
             }
             
-           
             
             // TODO: mpがプレイヤーの中心になるように設定
 
