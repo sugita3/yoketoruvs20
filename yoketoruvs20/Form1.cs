@@ -89,7 +89,6 @@ namespace yoketoruvs20
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timeCount--;
             
             if (nextState != State.None)
             {
@@ -116,6 +115,9 @@ namespace yoketoruvs20
 
         void UpdateGame()
         {
+            timeCount--;
+            
+
             Point mp = PointToClient(MousePosition);
 
             chrs[PlayerIndex].Left = mp.X - chrs[PlayerIndex].Width / 2;
@@ -180,10 +182,8 @@ namespace yoketoruvs20
 やり方３、itemtextを点にする
 */
                                     if (itemCount <= 0)
-                                    {
-                                        leftLabel.Text = "★：" + itemCount;
-                                        nextState = State.Clear;
-
+                                    {                                        
+                                        nextState = State.Clear;                                        
                                     }
                             }
 
@@ -250,7 +250,7 @@ namespace yoketoruvs20
                     hiLabel.Visible = true;
 
                     if (hiCount < timeCount)
-                        hiCount = timeCount+1;
+                        hiCount = timeCount;
 
                     break;
             }
@@ -282,6 +282,11 @@ namespace yoketoruvs20
         }
 
         private void hiLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tempLabel_Click(object sender, EventArgs e)
         {
 
         }

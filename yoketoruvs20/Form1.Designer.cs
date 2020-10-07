@@ -156,13 +156,14 @@
             // tempLabel
             // 
             this.tempLabel.AutoSize = true;
-            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tempLabel.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tempLabel.Location = new System.Drawing.Point(209, 410);
             this.tempLabel.Name = "tempLabel";
-            this.tempLabel.Size = new System.Drawing.Size(31, 21);
+            this.tempLabel.Size = new System.Drawing.Size(47, 33);
             this.tempLabel.TabIndex = 9;
             this.tempLabel.Text = "★";
             this.tempLabel.Visible = false;
+            this.tempLabel.Click += new System.EventHandler(this.tempLabel_Click);
             // 
             // Form1
             // 
